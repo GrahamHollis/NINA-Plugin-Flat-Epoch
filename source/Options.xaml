@@ -1,0 +1,172 @@
+﻿<ResourceDictionary
+    x:Class="Hologram.NINA.FlatEpoch.Options"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--  This data template will be displayed in N.I.N.A. on the options->plugin tab with the datacontext of the TestPlugin instance  -->
+    <!--  In order for this datatemplate to be picked correctly, the key has to follow the naming convention of <IPlugin.Name>_Options -->
+    <!--  Furthermore the Resource Dictionary has to be exported via code behind export attributes  -->
+    <DataTemplate x:Key="Flat Epoch_Options">
+        <StackPanel Orientation="Vertical" Background="{x:Null}">
+
+            <StackPanel Margin="0,10,0,5" Orientation="Horizontal">
+                <TextBlock
+                     Width="160"
+                     HorizontalAlignment="Right"
+                     VerticalAlignment="Center">
+                    <TextBlock.Text>Current Flat Epoch nr.</TextBlock.Text>
+                    <TextBlock.ToolTip>This is the current Flat Epoch and is the value of the $$FLAT_EPOCH$$ Image file pattern</TextBlock.ToolTip>
+                </TextBlock>
+                <!--   <TextBox MinWidth="50" Margin="5,10,0,0" Text="{Binding CurrEpoch}" IsEnabled="False"/>    -->
+                <TextBox MinWidth="50" Margin="5,10,0,0" Text="{Binding CurrEpoch}"/> 
+            </StackPanel>
+
+            <StackPanel Margin="0,10,0,5" Orientation="Horizontal">
+                <TextBlock
+                     Width="160"
+                     HorizontalAlignment="Right"
+                     VerticalAlignment="Center">
+                    <TextBlock.Text>Frames per Flat</TextBlock.Text>
+                    <TextBlock.ToolTip>The frames to take: DefaultCount range 3-200 (followed by optional per filter overrides in the format),filter=count,filter=count</TextBlock.ToolTip>
+                </TextBlock>
+                <TextBox MinWidth="250" Margin="5,10,0,0" Text="{Binding NrFlats}"/>
+            </StackPanel>
+
+            <StackPanel Margin="0,20,0,15" Orientation="Horizontal">
+                <TextBlock
+                     HorizontalAlignment="Right"
+                     VerticalAlignment="Center">
+                     <TextBlock TextWrapping="Wrap">
+                        The key defined below inform Flat Epoch of the KEY name used, as part of the Image file pattern and which form the KEY_VALUE pair as part of file name.
+                        <LineBreak/> The Epoch and Filter keys are mandatory, the rest optional.
+                    </TextBlock>
+                </TextBlock>
+            </StackPanel>
+
+            <StackPanel Margin="0,0,0,5" Orientation="Horizontal">
+                <TextBlock
+                     Width="160"
+                     HorizontalAlignment="Right"
+                     VerticalAlignment="Center">
+                    <TextBlock.Text>Epoch</TextBlock.Text>
+                    <TextBlock.ToolTip>The keyword that is associated with the $$FLAT_EPOCH$$ Image file pattern</TextBlock.ToolTip>
+                </TextBlock>
+                <TextBox MinWidth="100" Margin="5,0,0,0" Text="{Binding LabEpoch}"/>
+            </StackPanel>
+
+            <StackPanel Margin="0,0,0,5" Orientation="Horizontal">
+                <TextBlock
+                     Width="160"
+                     HorizontalAlignment="Right"
+                     VerticalAlignment="Center">
+                    <TextBlock.Text>Filter</TextBlock.Text>
+                    <TextBlock.ToolTip>The keyword that is associated with the $$FILTER$$ Image file pattern</TextBlock.ToolTip>
+                </TextBlock>
+                <TextBox MinWidth="100" Margin="5,0,0,0" Text="{Binding LabFilter}"/>
+            </StackPanel>
+
+            <StackPanel Margin="0,0,0,5" Orientation="Horizontal">
+                <TextBlock
+                     Width="160"
+                     HorizontalAlignment="Right"
+                     VerticalAlignment="Center">
+                    <TextBlock.Text>Camera Gain</TextBlock.Text>
+                    <TextBlock.ToolTip>The keyword that is associated with the $$GAIN$$ Image file pattern</TextBlock.ToolTip>
+                </TextBlock>
+                <TextBox MinWidth="100" Margin="5,0,0,0" Text="{Binding LabGain}"/>
+            </StackPanel>
+
+            <StackPanel Margin="0,0,0,5" Orientation="Horizontal">
+                <TextBlock
+                     Width="160"
+                     HorizontalAlignment="Right"
+                     VerticalAlignment="Center">
+                    <TextBlock.Text>Camera Offset</TextBlock.Text>
+                    <TextBlock.ToolTip>The keyword that is associated with the $$OFFSET$$ Image file pattern</TextBlock.ToolTip>
+                </TextBlock>
+                <TextBox MinWidth="100" Margin="5,0,0,0" Text="{Binding LabOffset}"/>
+            </StackPanel>
+
+            <StackPanel Margin="0,0,0,5" Orientation="Horizontal">
+                <TextBlock
+                     Width="160"
+                     HorizontalAlignment="Right"
+                     VerticalAlignment="Center">
+                    <TextBlock.Text>Binning</TextBlock.Text>
+                    <TextBlock.ToolTip>The keyword that is associated with the $$BINNING$$ Image file pattern</TextBlock.ToolTip>
+                </TextBlock>
+                <TextBox MinWidth="100" Margin="5,0,0,0" Text="{Binding LabBin}"/>
+            </StackPanel>
+
+            <StackPanel Margin="0,0,0,5" Orientation="Horizontal">
+                <TextBlock
+                     Width="160"
+                     HorizontalAlignment="Right"
+                     VerticalAlignment="Center">
+                    <TextBlock.Text>Readout Mode</TextBlock.Text>
+                    <TextBlock.ToolTip>The keyword that is associated with the $$READOUTMODE$$ Image file pattern</TextBlock.ToolTip>
+                </TextBlock>
+                <TextBox MinWidth="100" Margin="5,0,0,0" Text="{Binding LabReadOut}"/>
+            </StackPanel>
+
+            <StackPanel Margin="0,0,0,5" Orientation="Horizontal">
+                <TextBlock
+                     Width="160"
+                     HorizontalAlignment="Right"
+                     VerticalAlignment="Center">
+                    <TextBlock.Text>Rotator Angle</TextBlock.Text>
+                    <TextBlock.ToolTip>The keyword that is associated with the $$ROTATORANGLE$$ Image file pattern</TextBlock.ToolTip>
+                </TextBlock>
+                <TextBox MinWidth="100" Margin="5,0,0,0" Text="{Binding LabRot}"/>
+            </StackPanel>
+
+            <StackPanel Margin="0,30,0,5" Orientation="Horizontal">
+                <Button
+                    Width="300"
+                    Height="25"
+                    Margin="0,0,0,5"
+                    HorizontalAlignment="Left"
+                    Content="Check Flat Epoch Configuration"
+                    Command="{Binding ValidateImagePattern}"
+                />
+            </StackPanel>
+
+            <StackPanel Margin="0,20,0,5" Orientation="Horizontal">
+                <TextBlock x:Name="outputArea"
+                    Background="LightGray"
+                    Foreground="{Binding OutputColor}"
+                    FontSize="16"
+                    Width="800"
+                    Height="28"
+                    Margin="0,0,0,5"
+                    HorizontalAlignment="Left"
+                    Text="{Binding ValidationOutput}" TextWrapping="Wrap" TextAlignment="Center"
+                />
+
+            </StackPanel>
+
+            <StackPanel Margin="0,25,0,15" Orientation="Horizontal">
+                <TextBlock
+                     HorizontalAlignment="Right"
+                     VerticalAlignment="Center">
+                    <TextBlock TextWrapping="Wrap">
+                        <Bold><Underline>Image File Pattern RULES</Underline></Bold> <LineBreak/>
+                        <LineBreak/>
+                        <Italic>IFP = ‘Image File Pattern’ as defined in N.I.N.A. Options->Imaging</Italic>"<LineBreak/>
+                        <Italic> KVP = Key Value Pair as in KEY_VALUE or KEY-VALUE </Italic><LineBreak/>
+                        <Italic> Supported KVP prefix and suffix are _ -  \</Italic><LineBreak/>
+                        <LineBreak/>
+                    1.	The IFP must start with the pattern name $$IMAGETYPE$$<LineBreak/>
+                    2.	The key’s defined above must be unique from each other and occur only once in the IFP<LineBreak/>
+                    3.	The Epoch and Filter keys along with their patterns are mandatory, the rest are optional<LineBreak/>
+                    4.	Each key defined above must be included in the IFP along with their associated pattern<LineBreak/>
+                    5.	The Epoch KEY_$$FLAT_EPOCH$$ must be a directory level above all the other keywords<LineBreak/>
+                    6.	If a Flat IFP is defined, it must comply with all the rules above
+                    </TextBlock>
+
+
+                </TextBlock>
+            </StackPanel>
+
+        </StackPanel>
+    </DataTemplate>
+</ResourceDictionary>
